@@ -1,0 +1,996 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+
+    
+    
+    <link rel="SHORTCUT ICON" href="img/clover.ico" />
+
+    <link rel="stylesheet" href="aui/css/aui.min.css" media="all"/>
+    <link rel="stylesheet" href="aui/css/aui-experimental.min.css" media="all"/>
+    <!--[if IE 9]><link rel="stylesheet" href="aui/css/aui-ie9.min.css" media="all"/><![endif]-->
+
+    <style type="text/css" media="all">
+        @import url('style.css');
+        @import url('tree.css');
+        
+    </style>
+
+    <script src="jquery-1.8.3.min.js" type="text/javascript"></script>
+    <script src="aui/js/aui.min.js" type="text/javascript"></script>
+    <script src="aui/js/aui-experimental.min.js" type="text/javascript"></script>
+    <script src="aui/js/aui-soy.min.js" type="text/javascript"></script>
+
+    <script src="package-nodes-tree.js" type="text/javascript"></script>
+    <script src="clover-tree.js" type="text/javascript"></script>
+    <script src="clover.js" type="text/javascript"></script>
+    <script src="clover-descriptions.js" type="text/javascript"></script>
+    <script src="cloud.js" type="text/javascript"></script>
+
+            <title>Coverage Report</title>
+    </head>
+
+<body onresize="processTreeMapDashJson(treeMapJson);" >
+    <div id="page">
+        
+        
+
+
+<header id="header" role="banner">
+    <nav class="aui-header aui-dropdown2-trigger-group" role="navigation">
+        <div class="aui-header-inner">
+            <div class="aui-header-primary">
+                <h1 id="logo" class="aui-header-logo aui-header-logo-clover">
+                    <a href="http://www.atlassian.com/clover" title="Open Atlassian Clover home page"><span class="aui-header-logo-device">Clover</span></a>
+                </h1>
+                            </div>
+            <div class="aui-header-secondary">
+                <ul class="aui-nav">
+                    <li id="system-help-menu">
+                        <a class="aui-nav-link" title="Open online Clover documentation" target="_blank"
+                           href="https://confluence.atlassian.com/display/CLOVER/Clover+Documentation+Home">
+                            <span class="aui-icon aui-icon-small aui-iconfont-help">&#160;Help</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+        
+        <div class="aui-page-panel">
+            <div class="aui-page-panel-inner">
+                <div class="aui-page-panel-nav aui-page-panel-nav-clover">
+                    
+
+<div class="aui-page-header-inner" style="margin-bottom: 20px;">
+    <div class="aui-page-header-image">
+                <div class="aui-avatar aui-avatar-large aui-avatar-project">
+            <div class="aui-avatar-inner">
+                                    <img src="img/clover_logo_large.png" alt="Clover icon"/>
+                            </div>
+        </div>
+            </div>
+    <div class="aui-page-header-main" >
+        <h1>
+                                        Coverage Report
+                                </h1>
+    </div>
+</div>
+
+<nav class="aui-navgroup aui-navgroup-vertical">
+    <div class="aui-navgroup-inner">
+                                            <ul class="aui-nav">
+                <li class="aui-nav-selected">
+                    <a href="dashboard.html">Project overview</a>
+                </li>
+            </ul>
+        
+                <div class="aui-nav-heading packages-nav-heading">
+            <strong>Packages</strong>
+        </div>
+        <div class="aui-nav project-packages">
+            <form method="get" action="#" class="aui package-filter-container">
+                <input type="text" autocomplete="off" class="package-filter text"
+                       placeholder="Type to filter packages..." name="package-filter" id="package-filter"
+                       title="Start typing package name (or part of the name) to search through the tree. Use arrow keys and the Enter key to navigate."/>
+            </form>
+            <p class="package-filter-no-results-message hidden">
+                <small>No results found.</small>
+            </p>
+                                                  <div class="packages-tree-wrapper" data-root-relative="" data-package-name="">
+                <div class="packages-tree-container"></div>
+                <div class="clover-packages-lozenges"></div>
+            </div>
+        </div>
+        
+            </div>
+</nav>                </div>
+                <section class="aui-page-panel-content">
+                    <div class="aui-page-panel-content-clover">
+
+                    
+                    <ol class="aui-nav aui-nav-breadcrumbs">
+            
+        <li><a href="dashboard.html">Project Clover database seg. mai. 13 2024 21:45:50 BRT</a></li>
+    </ol>
+    
+<h1 class="aui-h2-clover">
+            Project overview
+    </h1>
+<div class="aui-tabs horizontal-tabs">
+        <ul class="tabs-menu">
+            <li class="menu-item active-tab">
+            <a href="dashboard.html">Dashboard</a>
+        </li>
+                <li class="menu-item ">
+            <a href="pkg-summary.html"><strong>Application code</strong></a>
+        </li>
+                <li class="menu-item ">
+            <a href="testsrc-pkg-summary.html"><strong>Test code</strong></a>
+        </li>
+        <li class="menu-item ">
+            <a href="test-pkg-summary.html"><strong>Test results</strong></a>
+        </li>
+                <li class="menu-item ">
+            <a href="top-risks.html"><strong>Top risks</strong></a>
+        </li>
+        <li class="menu-item ">
+            <a href="quick-wins.html"><strong>Quick wins</strong></a>
+        </li>
+                                                <li class="menu-item ">
+                <a href="treemap.html"><strong>Coverage tree map</strong></a>
+            </li>
+            </ul>
+    <div class="tabs-pane active-pane" id="tabs-first">
+
+        <div>&#160;</div>
+
+
+
+    <div class="aui-message aui-message-warning">
+        <p class="title">
+            <strong>Evaluation License</strong>
+        </p>
+        <p>
+            This report was generated with an evaluation server license.  <a href="http://www.atlassian.com/software/clover">Purchase Clover</a> or <a href="http://confluence.atlassian.com/x/JAgQCQ">configure your license.</a>
+        </p>
+    </div>
+
+
+
+<div class="aui-group">
+    <div class="aui-item">
+        <div class="dashboard-widget">
+            <header class="dashboard-widget-header">
+                
+                <h3>
+                    Code coverage
+                    <small style="float:right; font-weight: normal">
+                        151 classes,
+                        0 /
+                        2.962 elements
+                    </small>
+                </h3>
+            </header>
+            <div class="dashboard-widget-content">
+                <div style="display: table; width: 100%">
+<div class="barGraphValue"><span class="sortValue">0.0</span>0%</div><div style="display: table-cell">
+ <div title="0% Covered"  style="min-width:200px;" class="barNegative contribBarNegative "><div class="barPositive contribBarPositive " style="width:0%"></div></div></div></div>
+                <p><a href="pkg-summary.html">See more</a></p>
+            </div>
+        </div>
+
+        <div class="dashboard-widget">
+            <header class="dashboard-widget-header">
+                <h3>
+                    Test results
+                    <small style="float:right; font-weight: normal">
+                        0 /
+                        0 tests
+                        0 secs
+                    </small>
+                </h3>
+            </header>
+            <div class="dashboard-widget-content">
+                                        <div class="aui-message aui-message-warning">
+        <p class="title">
+            <strong>No test results</strong>
+        </p>
+        <p>No test results could be found. Please ensure that you have instrumented your unit tests correctly.</p>
+    </div>
+                                <p><a href="test-pkg-summary.html">See more</a></p>
+            </div>
+        </div>
+
+        <div class="dashboard-widget">
+            <header class="dashboard-widget-header">
+                <h3>Code metrics</h3>
+            </header>
+                         
+
+<div id="$statsId" class="aui-item" style="display: ${display}">
+<div style="display: table">
+    <div class="stats-box">
+        <div class="stats-box-label"><label title="Total number of branches in this project">Branches:</label></div>
+        <div class="stats-box-value">308</div>
+    </div>
+    <div class="stats-box">
+        <div class="stats-box-label"><label title="Total number of statements in this project">Statements:</label></div>
+        <div class="stats-box-value">1.965</div>
+    </div>
+    <div class="stats-box">
+        <div class="stats-box-label"><label title="Total number of methods in this project">Methods:</label></div>
+        <div class="stats-box-value">689</div>
+    </div>
+    <div class="stats-box">
+        <div class="stats-box-label"><label title="Total number of classes in this project">Classes:</label></div>
+        <div class="stats-box-value">151</div>
+    </div>
+            <div class="stats-box">
+            <div class="stats-box-label"><label title="Total number of files in this project">Files:</label></div>
+            <div class="stats-box-value">109</div>
+        </div>
+                <div class="stats-box">
+            <div class="stats-box-label"><label title="Total number of packages in this project">Packages:</label></div>
+            <div class="stats-box-value">27</div>
+        </div>
+        <div class="stats-box">
+        <div class="stats-box-label"><label title="Total number of lines of code in this project">LOC:</label></div>
+        <div class="stats-box-value">9.693</div>
+    </div>
+    <div class="stats-box">
+        <div class="stats-box-label"><label title="Total number of non-comment lines of code in this project">NCLOC:</label></div>
+        <div class="stats-box-value">5.788</div>
+    </div>
+    <div class="stats-box">
+        <div class="stats-box-label"><label title="Cyclomatic complexity is the number of paths in this project">Total complexity:</label></div>
+        <div class="stats-box-value">931</div>
+    </div>
+    <div class="stats-box">
+        <div class="stats-box-label">
+            <label title="Complexity density is the complexity divided by the number of statements in this project">Complexity density:</label>
+        </div>
+        <div class="stats-box-value">0,47</div>
+    </div>
+    <div class="stats-box">
+        <div class="stats-box-label"><label title="Number of statements per method.">Statements/Method:</label></div>
+        <div class="stats-box-value">2,85</div>
+    </div>
+    <div class="stats-box">
+        <div class="stats-box-label"><label title="Number of methods per class.">Methods/Class:</label></div>
+        <div class="stats-box-value">4,56</div>
+    </div>
+            <div class="stats-box">
+            <div class="stats-box-label"><label title="Number of classes per package.">Classes/Package:</label></div>
+            <div class="stats-box-value">5,59</div>
+        </div>
+        <div class="stats-box">
+        <div class="stats-box-label"><label title="Complexity divided by the number of methods in this project">Average method complexity:</label></div>
+        <div class="stats-box-value">1,35</div>
+    </div>
+</div>
+
+</div>        </div>
+
+                <div class="dashboard-widget">
+            <header class="dashboard-widget-header">
+                <h3>Class Coverage Distribution</h3>
+            </header>
+            <div class="dashboard-widget-content">
+                <div style="text-align: center">                     <img src="img/classDistrubutionChart.png" alt="img/classDistrubutionChart.png" usemap="#classDistrubutionChart.png"/>
+                </div>
+                <map id="classDistrubutionChart.png" name="classDistrubutionChart.png">
+<area shape="rect" coords="38,15,60,205" title="129 classes have 0% coverage" alt="" nohref="nohref"/>
+</map>
+            </div>
+        </div>
+        
+                <div class="dashboard-widget">
+            <header class="dashboard-widget-header">
+                <h3>Class Complexity</h3>
+            </header>
+            <div class="dashboard-widget-content">
+                <div style="text-align: center">
+                    <img src="img/classComplexityChart.png" alt="img/classComplexityChart.png" usemap="#classComplexityChart.png"/>
+                </div>
+                <map id="classComplexityChart.png" name="classComplexityChart.png">
+<area shape="poly" coords="54,203,52,206,49,203,52,201,54,203,54,203" title="Complexity: 1; Coverage: 0%; Class: PitUiUpdate.Builder" alt="" href="org/pitest/pitclipse/ui/extension/point/PitUiUpdate.html#PitUiUpdate.Builder"/>
+<area shape="poly" coords="54,203,52,206,49,203,52,201,54,203,54,203" title="Complexity: 1; Coverage: 0%; Class: PitUiUpdate.Builder" alt="" href="org/pitest/pitclipse/ui/extension/point/PitUiUpdate.html#PitUiUpdate.Builder"/>
+<area shape="poly" coords="54,203,52,206,49,203,52,201,54,203,54,203" title="Complexity: 1; Coverage: 0%; Class: PitUiUpdate.Builder" alt="" href="org/pitest/pitclipse/ui/extension/point/PitUiUpdate.html#PitUiUpdate.Builder"/>
+<area shape="poly" coords="54,99,52,102,49,99,52,97,54,99,54,99" title="Complexity: 24; Coverage: 0%; Class: PitclipseUiUtils" alt="" href="org/pitest/pitclipse/ui/utils/PitclipseUiUtils.html#PitclipseUiUtils"/>
+<area shape="poly" coords="54,199,52,201,49,199,52,196,54,199,54,199" title="Complexity: 2; Coverage: 0%; Class: LinkSelectionAdapter" alt="" href="org/pitest/pitclipse/ui/utils/LinkSelectionAdapter.html#LinkSelectionAdapter"/>
+<area shape="poly" coords="54,176,52,179,49,176,52,174,54,176,54,176" title="Complexity: 7; Coverage: 0%; Class: PitUiActivator" alt="" href="org/pitest/pitclipse/ui/core/PitUiActivator.html#PitUiActivator"/>
+<area shape="poly" coords="54,203,52,206,49,203,52,201,54,203,54,203" title="Complexity: 1; Coverage: 0%; Class: PitUiUpdate.Builder" alt="" href="org/pitest/pitclipse/ui/extension/point/PitUiUpdate.html#PitUiUpdate.Builder"/>
+<area shape="poly" coords="54,203,52,206,49,203,52,201,54,203,54,203" title="Complexity: 1; Coverage: 0%; Class: PitUiUpdate.Builder" alt="" href="org/pitest/pitclipse/ui/extension/point/PitUiUpdate.html#PitUiUpdate.Builder"/>
+<area shape="poly" coords="54,172,52,174,49,172,52,169,54,172,54,172" title="Complexity: 8; Coverage: 0%; Class: PitViewFinder.ViewSearch" alt="" href="org/pitest/pitclipse/ui/view/PitViewFinder.html#PitViewFinder.ViewSearch"/>
+<area shape="poly" coords="54,185,52,188,49,185,52,183,54,185,54,185" title="Complexity: 5; Coverage: 0%; Class: PitViewFinder" alt="" href="org/pitest/pitclipse/ui/view/PitViewFinder.html#PitViewFinder"/>
+<area shape="poly" coords="54,163,52,165,49,163,52,160,54,163,54,163" title="Complexity: 10; Coverage: 0%; Class: PitView" alt="" href="org/pitest/pitclipse/ui/view/PitView.html#PitView"/>
+<area shape="poly" coords="54,194,52,197,49,194,52,192,54,194,54,194" title="Complexity: 3; Coverage: 0%; Class: PitUiUpdatePublisher" alt="" href="org/pitest/pitclipse/ui/view/PitUiUpdatePublisher.html#PitUiUpdatePublisher"/>
+<area shape="poly" coords="54,203,52,206,49,203,52,201,54,203,54,203" title="Complexity: 1; Coverage: 0%; Class: PitUiUpdate.Builder" alt="" href="org/pitest/pitclipse/ui/extension/point/PitUiUpdate.html#PitUiUpdate.Builder"/>
+<area shape="poly" coords="54,203,52,206,49,203,52,201,54,203,54,203" title="Complexity: 1; Coverage: 0%; Class: PitUiUpdate.Builder" alt="" href="org/pitest/pitclipse/ui/extension/point/PitUiUpdate.html#PitUiUpdate.Builder"/>
+<area shape="poly" coords="54,163,52,165,49,163,52,160,54,163,54,163" title="Complexity: 10; Coverage: 0%; Class: PitView" alt="" href="org/pitest/pitclipse/ui/view/PitView.html#PitView"/>
+<area shape="poly" coords="54,176,52,179,49,176,52,174,54,176,54,176" title="Complexity: 7; Coverage: 0%; Class: PitUiActivator" alt="" href="org/pitest/pitclipse/ui/core/PitUiActivator.html#PitUiActivator"/>
+<area shape="poly" coords="54,194,52,197,49,194,52,192,54,194,54,194" title="Complexity: 3; Coverage: 0%; Class: PitUiUpdatePublisher" alt="" href="org/pitest/pitclipse/ui/view/PitUiUpdatePublisher.html#PitUiUpdatePublisher"/>
+<area shape="poly" coords="54,181,52,183,49,181,52,178,54,181,54,181" title="Complexity: 6; Coverage: 0%; Class: PitMutationsViewContentProvider.Parent" alt="" href="org/pitest/pitclipse/ui/view/mutations/PitMutationsViewContentProvider.html#PitMutationsViewContentProvider.Parent"/>
+<area shape="poly" coords="54,181,52,183,49,181,52,178,54,181,54,181" title="Complexity: 6; Coverage: 0%; Class: PitMutationsViewContentProvider.Parent" alt="" href="org/pitest/pitclipse/ui/view/mutations/PitMutationsViewContentProvider.html#PitMutationsViewContentProvider.Parent"/>
+<area shape="poly" coords="54,181,52,183,49,181,52,178,54,181,54,181" title="Complexity: 6; Coverage: 0%; Class: PitMutationsViewContentProvider.Parent" alt="" href="org/pitest/pitclipse/ui/view/mutations/PitMutationsViewContentProvider.html#PitMutationsViewContentProvider.Parent"/>
+<area shape="poly" coords="54,199,52,201,49,199,52,196,54,199,54,199" title="Complexity: 2; Coverage: 0%; Class: LinkSelectionAdapter" alt="" href="org/pitest/pitclipse/ui/utils/LinkSelectionAdapter.html#LinkSelectionAdapter"/>
+<area shape="poly" coords="54,181,52,183,49,181,52,178,54,181,54,181" title="Complexity: 6; Coverage: 0%; Class: PitMutationsViewContentProvider.Parent" alt="" href="org/pitest/pitclipse/ui/view/mutations/PitMutationsViewContentProvider.html#PitMutationsViewContentProvider.Parent"/>
+<area shape="poly" coords="54,190,52,192,49,190,52,187,54,190,54,190" title="Complexity: 4; Coverage: 0%; Class: OpenMutationDoubleClick.MutationSource.MutationSelectingJob.OpenFileInEditorAtLine" alt="" href="org/pitest/pitclipse/ui/view/mutations/OpenMutationDoubleClick.html#OpenMutationDoubleClick.MutationSource.MutationSelectingJob.OpenFileInEditorAtLine"/>
+<area shape="poly" coords="54,190,52,192,49,190,52,187,54,190,54,190" title="Complexity: 4; Coverage: 0%; Class: OpenMutationDoubleClick.MutationSource.MutationSelectingJob.OpenFileInEditorAtLine" alt="" href="org/pitest/pitclipse/ui/view/mutations/OpenMutationDoubleClick.html#OpenMutationDoubleClick.MutationSource.MutationSelectingJob.OpenFileInEditorAtLine"/>
+<area shape="poly" coords="54,203,52,206,49,203,52,201,54,203,54,203" title="Complexity: 1; Coverage: 0%; Class: PitUiUpdate.Builder" alt="" href="org/pitest/pitclipse/ui/extension/point/PitUiUpdate.html#PitUiUpdate.Builder"/>
+<area shape="poly" coords="54,199,52,201,49,199,52,196,54,199,54,199" title="Complexity: 2; Coverage: 0%; Class: LinkSelectionAdapter" alt="" href="org/pitest/pitclipse/ui/utils/LinkSelectionAdapter.html#LinkSelectionAdapter"/>
+<area shape="poly" coords="54,203,52,206,49,203,52,201,54,203,54,203" title="Complexity: 1; Coverage: 0%; Class: PitUiUpdate.Builder" alt="" href="org/pitest/pitclipse/ui/extension/point/PitUiUpdate.html#PitUiUpdate.Builder"/>
+<area shape="poly" coords="54,190,52,192,49,190,52,187,54,190,54,190" title="Complexity: 4; Coverage: 0%; Class: OpenMutationDoubleClick.MutationSource.MutationSelectingJob.OpenFileInEditorAtLine" alt="" href="org/pitest/pitclipse/ui/view/mutations/OpenMutationDoubleClick.html#OpenMutationDoubleClick.MutationSource.MutationSelectingJob.OpenFileInEditorAtLine"/>
+<area shape="poly" coords="54,199,52,201,49,199,52,196,54,199,54,199" title="Complexity: 2; Coverage: 0%; Class: LinkSelectionAdapter" alt="" href="org/pitest/pitclipse/ui/utils/LinkSelectionAdapter.html#LinkSelectionAdapter"/>
+<area shape="poly" coords="54,199,52,201,49,199,52,196,54,199,54,199" title="Complexity: 2; Coverage: 0%; Class: LinkSelectionAdapter" alt="" href="org/pitest/pitclipse/ui/utils/LinkSelectionAdapter.html#LinkSelectionAdapter"/>
+<area shape="poly" coords="54,108,52,111,49,108,52,106,54,108,54,108" title="Complexity: 22; Coverage: 0%; Class: Mutations.Mutation" alt="" href="org/pitest/pitclipse/runner/results/Mutations.html#Mutations.Mutation"/>
+<area shape="poly" coords="54,199,52,201,49,199,52,196,54,199,54,199" title="Complexity: 2; Coverage: 0%; Class: LinkSelectionAdapter" alt="" href="org/pitest/pitclipse/ui/utils/LinkSelectionAdapter.html#LinkSelectionAdapter"/>
+<area shape="poly" coords="54,158,52,161,49,158,52,156,54,158,54,158" title="Complexity: 11; Coverage: 0%; Class: DetectionStatusCoverter" alt="" href="org/pitest/pitclipse/runner/results/DetectionStatusCoverter.html#DetectionStatusCoverter"/>
+<area shape="poly" coords="54,203,52,206,49,203,52,201,54,203,54,203" title="Complexity: 1; Coverage: 0%; Class: PitUiUpdate.Builder" alt="" href="org/pitest/pitclipse/ui/extension/point/PitUiUpdate.html#PitUiUpdate.Builder"/>
+<area shape="poly" coords="54,194,52,197,49,194,52,192,54,194,54,194" title="Complexity: 3; Coverage: 0%; Class: PitUiUpdatePublisher" alt="" href="org/pitest/pitclipse/ui/view/PitUiUpdatePublisher.html#PitUiUpdatePublisher"/>
+<area shape="poly" coords="54,176,52,179,49,176,52,174,54,176,54,176" title="Complexity: 7; Coverage: 0%; Class: PitUiActivator" alt="" href="org/pitest/pitclipse/ui/core/PitUiActivator.html#PitUiActivator"/>
+<area shape="poly" coords="54,199,52,201,49,199,52,196,54,199,54,199" title="Complexity: 2; Coverage: 0%; Class: LinkSelectionAdapter" alt="" href="org/pitest/pitclipse/ui/utils/LinkSelectionAdapter.html#LinkSelectionAdapter"/>
+<area shape="poly" coords="54,172,52,174,49,172,52,169,54,172,54,172" title="Complexity: 8; Coverage: 0%; Class: PitViewFinder.ViewSearch" alt="" href="org/pitest/pitclipse/ui/view/PitViewFinder.html#PitViewFinder.ViewSearch"/>
+<area shape="poly" coords="54,185,52,188,49,185,52,183,54,185,54,185" title="Complexity: 5; Coverage: 0%; Class: PitViewFinder" alt="" href="org/pitest/pitclipse/ui/view/PitViewFinder.html#PitViewFinder"/>
+<area shape="poly" coords="54,158,52,161,49,158,52,156,54,158,54,158" title="Complexity: 11; Coverage: 0%; Class: DetectionStatusCoverter" alt="" href="org/pitest/pitclipse/runner/results/DetectionStatusCoverter.html#DetectionStatusCoverter"/>
+<area shape="poly" coords="54,158,52,161,49,158,52,156,54,158,54,158" title="Complexity: 11; Coverage: 0%; Class: DetectionStatusCoverter" alt="" href="org/pitest/pitclipse/runner/results/DetectionStatusCoverter.html#DetectionStatusCoverter"/>
+<area shape="poly" coords="54,140,52,142,49,140,52,137,54,140,54,140" title="Complexity: 15; Coverage: 0%; Class: PitServer" alt="" href="org/pitest/pitclipse/runner/server/PitServer.html#PitServer"/>
+<area shape="poly" coords="54,203,52,206,49,203,52,201,54,203,54,203" title="Complexity: 1; Coverage: 0%; Class: PitUiUpdate.Builder" alt="" href="org/pitest/pitclipse/ui/extension/point/PitUiUpdate.html#PitUiUpdate.Builder"/>
+<area shape="poly" coords="54,126,52,129,49,126,52,124,54,126,54,126" title="Complexity: 18; Coverage: 0%; Class: SocketProvider" alt="" href="org/pitest/pitclipse/runner/io/SocketProvider.html#SocketProvider"/>
+<area shape="poly" coords="54,203,52,206,49,203,52,201,54,203,54,203" title="Complexity: 1; Coverage: 0%; Class: PitUiUpdate.Builder" alt="" href="org/pitest/pitclipse/ui/extension/point/PitUiUpdate.html#PitUiUpdate.Builder"/>
+<area shape="poly" coords="54,203,52,206,49,203,52,201,54,203,54,203" title="Complexity: 1; Coverage: 0%; Class: PitUiUpdate.Builder" alt="" href="org/pitest/pitclipse/ui/extension/point/PitUiUpdate.html#PitUiUpdate.Builder"/>
+<area shape="poly" coords="54,203,52,206,49,203,52,201,54,203,54,203" title="Complexity: 1; Coverage: 0%; Class: PitUiUpdate.Builder" alt="" href="org/pitest/pitclipse/ui/extension/point/PitUiUpdate.html#PitUiUpdate.Builder"/>
+<area shape="poly" coords="54,203,52,206,49,203,52,201,54,203,54,203" title="Complexity: 1; Coverage: 0%; Class: PitUiUpdate.Builder" alt="" href="org/pitest/pitclipse/ui/extension/point/PitUiUpdate.html#PitUiUpdate.Builder"/>
+<area shape="poly" coords="54,149,52,152,49,149,52,147,54,149,54,149" title="Complexity: 13; Coverage: 0%; Class: ObjectStreamSocket" alt="" href="org/pitest/pitclipse/runner/io/ObjectStreamSocket.html#ObjectStreamSocket"/>
+<area shape="poly" coords="54,181,52,183,49,181,52,178,54,181,54,181" title="Complexity: 6; Coverage: 0%; Class: PitMutationsViewContentProvider.Parent" alt="" href="org/pitest/pitclipse/ui/view/mutations/PitMutationsViewContentProvider.html#PitMutationsViewContentProvider.Parent"/>
+<area shape="poly" coords="54,203,52,206,49,203,52,201,54,203,54,203" title="Complexity: 1; Coverage: 0%; Class: PitUiUpdate.Builder" alt="" href="org/pitest/pitclipse/ui/extension/point/PitUiUpdate.html#PitUiUpdate.Builder"/>
+<area shape="poly" coords="54,172,52,174,49,172,52,169,54,172,54,172" title="Complexity: 8; Coverage: 0%; Class: PitViewFinder.ViewSearch" alt="" href="org/pitest/pitclipse/ui/view/PitViewFinder.html#PitViewFinder.ViewSearch"/>
+<area shape="poly" coords="54,181,52,183,49,181,52,178,54,181,54,181" title="Complexity: 6; Coverage: 0%; Class: PitMutationsViewContentProvider.Parent" alt="" href="org/pitest/pitclipse/ui/view/mutations/PitMutationsViewContentProvider.html#PitMutationsViewContentProvider.Parent"/>
+<area shape="poly" coords="54,190,52,192,49,190,52,187,54,190,54,190" title="Complexity: 4; Coverage: 0%; Class: OpenMutationDoubleClick.MutationSource.MutationSelectingJob.OpenFileInEditorAtLine" alt="" href="org/pitest/pitclipse/ui/view/mutations/OpenMutationDoubleClick.html#OpenMutationDoubleClick.MutationSource.MutationSelectingJob.OpenFileInEditorAtLine"/>
+<area shape="poly" coords="54,181,52,183,49,181,52,178,54,181,54,181" title="Complexity: 6; Coverage: 0%; Class: PitMutationsViewContentProvider.Parent" alt="" href="org/pitest/pitclipse/ui/view/mutations/PitMutationsViewContentProvider.html#PitMutationsViewContentProvider.Parent"/>
+<area shape="poly" coords="54,199,52,201,49,199,52,196,54,199,54,199" title="Complexity: 2; Coverage: 0%; Class: LinkSelectionAdapter" alt="" href="org/pitest/pitclipse/ui/utils/LinkSelectionAdapter.html#LinkSelectionAdapter"/>
+<area shape="poly" coords="54,49,52,52,49,49,52,47,54,49,54,49" title="Complexity: 35; Coverage: 0%; Class: PitOptions.PitOptionsBuilder" alt="" href="org/pitest/pitclipse/runner/PitOptions.html#PitOptions.PitOptionsBuilder"/>
+<area shape="poly" coords="54,126,52,129,49,126,52,124,54,126,54,126" title="Complexity: 18; Coverage: 0%; Class: SocketProvider" alt="" href="org/pitest/pitclipse/runner/io/SocketProvider.html#SocketProvider"/>
+<area shape="poly" coords="54,86,52,88,49,86,52,83,54,86,54,86" title="Complexity: 27; Coverage: 0%; Class: PitCliArguments" alt="" href="org/pitest/pitclipse/runner/PitCliArguments.html#PitCliArguments"/>
+<area shape="poly" coords="54,185,52,188,49,185,52,183,54,185,54,185" title="Complexity: 5; Coverage: 0%; Class: PitViewFinder" alt="" href="org/pitest/pitclipse/ui/view/PitViewFinder.html#PitViewFinder"/>
+<area shape="poly" coords="54,149,52,152,49,149,52,147,54,149,54,149" title="Complexity: 13; Coverage: 0%; Class: ObjectStreamSocket" alt="" href="org/pitest/pitclipse/runner/io/ObjectStreamSocket.html#ObjectStreamSocket"/>
+<area shape="poly" coords="54,185,52,188,49,185,52,183,54,185,54,185" title="Complexity: 5; Coverage: 0%; Class: PitViewFinder" alt="" href="org/pitest/pitclipse/ui/view/PitViewFinder.html#PitViewFinder"/>
+<area shape="poly" coords="54,145,52,147,49,145,52,142,54,145,54,145" title="Complexity: 14; Coverage: 0%; Class: ProjectMutations" alt="" href="org/pitest/pitclipse/runner/model/ProjectMutations.html#ProjectMutations"/>
+<area shape="poly" coords="54,185,52,188,49,185,52,183,54,185,54,185" title="Complexity: 5; Coverage: 0%; Class: PitViewFinder" alt="" href="org/pitest/pitclipse/ui/view/PitViewFinder.html#PitViewFinder"/>
+<area shape="poly" coords="54,145,52,147,49,145,52,142,54,145,54,145" title="Complexity: 14; Coverage: 0%; Class: ProjectMutations" alt="" href="org/pitest/pitclipse/runner/model/ProjectMutations.html#ProjectMutations"/>
+<area shape="poly" coords="54,181,52,183,49,181,52,178,54,181,54,181" title="Complexity: 6; Coverage: 0%; Class: PitMutationsViewContentProvider.Parent" alt="" href="org/pitest/pitclipse/ui/view/mutations/PitMutationsViewContentProvider.html#PitMutationsViewContentProvider.Parent"/>
+<area shape="poly" coords="54,194,52,197,49,194,52,192,54,194,54,194" title="Complexity: 3; Coverage: 0%; Class: PitUiUpdatePublisher" alt="" href="org/pitest/pitclipse/ui/view/PitUiUpdatePublisher.html#PitUiUpdatePublisher"/>
+<area shape="poly" coords="54,158,52,161,49,158,52,156,54,158,54,158" title="Complexity: 11; Coverage: 0%; Class: DetectionStatusCoverter" alt="" href="org/pitest/pitclipse/runner/results/DetectionStatusCoverter.html#DetectionStatusCoverter"/>
+<area shape="poly" coords="54,194,52,197,49,194,52,192,54,194,54,194" title="Complexity: 3; Coverage: 0%; Class: PitUiUpdatePublisher" alt="" href="org/pitest/pitclipse/ui/view/PitUiUpdatePublisher.html#PitUiUpdatePublisher"/>
+<area shape="poly" coords="54,167,52,170,49,167,52,165,54,167,54,167" title="Complexity: 9; Coverage: 0%; Class: Mutation.Builder" alt="" href="org/pitest/pitclipse/runner/model/Mutation.html#Mutation.Builder"/>
+<area shape="poly" coords="54,131,52,133,49,131,52,128,54,131,54,131" title="Complexity: 17; Coverage: 0%; Class: Mutation" alt="" href="org/pitest/pitclipse/runner/model/Mutation.html#Mutation"/>
+<area shape="poly" coords="54,158,52,161,49,158,52,156,54,158,54,158" title="Complexity: 11; Coverage: 0%; Class: DetectionStatusCoverter" alt="" href="org/pitest/pitclipse/runner/results/DetectionStatusCoverter.html#DetectionStatusCoverter"/>
+<area shape="poly" coords="54,199,52,201,49,199,52,196,54,199,54,199" title="Complexity: 2; Coverage: 0%; Class: LinkSelectionAdapter" alt="" href="org/pitest/pitclipse/ui/utils/LinkSelectionAdapter.html#LinkSelectionAdapter"/>
+<area shape="poly" coords="54,185,52,188,49,185,52,183,54,185,54,185" title="Complexity: 5; Coverage: 0%; Class: PitViewFinder" alt="" href="org/pitest/pitclipse/ui/view/PitViewFinder.html#PitViewFinder"/>
+<area shape="poly" coords="54,145,52,147,49,145,52,142,54,145,54,145" title="Complexity: 14; Coverage: 0%; Class: ProjectMutations" alt="" href="org/pitest/pitclipse/runner/model/ProjectMutations.html#ProjectMutations"/>
+<area shape="poly" coords="54,154,52,156,49,154,52,151,54,154,54,154" title="Complexity: 12; Coverage: 0%; Class: PitPreferencePage" alt="" href="org/pitest/pitclipse/preferences/ui/PitPreferencePage.html#PitPreferencePage"/>
+<area shape="poly" coords="54,190,52,192,49,190,52,187,54,190,54,190" title="Complexity: 4; Coverage: 0%; Class: OpenMutationDoubleClick.MutationSource.MutationSelectingJob.OpenFileInEditorAtLine" alt="" href="org/pitest/pitclipse/ui/view/mutations/OpenMutationDoubleClick.html#OpenMutationDoubleClick.MutationSource.MutationSelectingJob.OpenFileInEditorAtLine"/>
+<area shape="poly" coords="54,199,52,201,49,199,52,196,54,199,54,199" title="Complexity: 2; Coverage: 0%; Class: LinkSelectionAdapter" alt="" href="org/pitest/pitclipse/ui/utils/LinkSelectionAdapter.html#LinkSelectionAdapter"/>
+<area shape="poly" coords="54,190,52,192,49,190,52,187,54,190,54,190" title="Complexity: 4; Coverage: 0%; Class: OpenMutationDoubleClick.MutationSource.MutationSelectingJob.OpenFileInEditorAtLine" alt="" href="org/pitest/pitclipse/ui/view/mutations/OpenMutationDoubleClick.html#OpenMutationDoubleClick.MutationSource.MutationSelectingJob.OpenFileInEditorAtLine"/>
+<area shape="poly" coords="54,194,52,197,49,194,52,192,54,194,54,194" title="Complexity: 3; Coverage: 0%; Class: PitUiUpdatePublisher" alt="" href="org/pitest/pitclipse/ui/view/PitUiUpdatePublisher.html#PitUiUpdatePublisher"/>
+<area shape="poly" coords="54,194,52,197,49,194,52,192,54,194,54,194" title="Complexity: 3; Coverage: 0%; Class: PitUiUpdatePublisher" alt="" href="org/pitest/pitclipse/ui/view/PitUiUpdatePublisher.html#PitUiUpdatePublisher"/>
+<area shape="poly" coords="54,190,52,192,49,190,52,187,54,190,54,190" title="Complexity: 4; Coverage: 0%; Class: OpenMutationDoubleClick.MutationSource.MutationSelectingJob.OpenFileInEditorAtLine" alt="" href="org/pitest/pitclipse/ui/view/mutations/OpenMutationDoubleClick.html#OpenMutationDoubleClick.MutationSource.MutationSelectingJob.OpenFileInEditorAtLine"/>
+<area shape="poly" coords="54,185,52,188,49,185,52,183,54,185,54,185" title="Complexity: 5; Coverage: 0%; Class: PitViewFinder" alt="" href="org/pitest/pitclipse/ui/view/PitViewFinder.html#PitViewFinder"/>
+<area shape="poly" coords="54,158,52,161,49,158,52,156,54,158,54,158" title="Complexity: 11; Coverage: 0%; Class: DetectionStatusCoverter" alt="" href="org/pitest/pitclipse/runner/results/DetectionStatusCoverter.html#DetectionStatusCoverter"/>
+<area shape="poly" coords="54,163,52,165,49,163,52,160,54,163,54,163" title="Complexity: 10; Coverage: 0%; Class: PitView" alt="" href="org/pitest/pitclipse/ui/view/PitView.html#PitView"/>
+<area shape="poly" coords="54,194,52,197,49,194,52,192,54,194,54,194" title="Complexity: 3; Coverage: 0%; Class: PitUiUpdatePublisher" alt="" href="org/pitest/pitclipse/ui/view/PitUiUpdatePublisher.html#PitUiUpdatePublisher"/>
+<area shape="poly" coords="54,199,52,201,49,199,52,196,54,199,54,199" title="Complexity: 2; Coverage: 0%; Class: LinkSelectionAdapter" alt="" href="org/pitest/pitclipse/ui/utils/LinkSelectionAdapter.html#LinkSelectionAdapter"/>
+<area shape="poly" coords="54,67,52,70,49,67,52,65,54,67,54,67" title="Complexity: 31; Coverage: 0%; Class: PitMutatorsTab" alt="" href="org/pitest/pitclipse/launch/ui/PitMutatorsTab.html#PitMutatorsTab"/>
+<area shape="poly" coords="54,131,52,133,49,131,52,128,54,131,54,131" title="Complexity: 17; Coverage: 0%; Class: Mutation" alt="" href="org/pitest/pitclipse/runner/model/Mutation.html#Mutation"/>
+<area shape="poly" coords="54,163,52,165,49,163,52,160,54,163,54,163" title="Complexity: 10; Coverage: 0%; Class: PitView" alt="" href="org/pitest/pitclipse/ui/view/PitView.html#PitView"/>
+<area shape="poly" coords="54,18,52,20,49,18,52,15,54,18,54,18" title="Complexity: 42; Coverage: 0%; Class: PitLaunchShortcut" alt="" href="org/pitest/pitclipse/launch/ui/PitLaunchShortcut.html#PitLaunchShortcut"/>
+<area shape="poly" coords="54,203,52,206,49,203,52,201,54,203,54,203" title="Complexity: 1; Coverage: 0%; Class: PitUiUpdate.Builder" alt="" href="org/pitest/pitclipse/ui/extension/point/PitUiUpdate.html#PitUiUpdate.Builder"/>
+<area shape="poly" coords="54,203,52,206,49,203,52,201,54,203,54,203" title="Complexity: 1; Coverage: 0%; Class: PitUiUpdate.Builder" alt="" href="org/pitest/pitclipse/ui/extension/point/PitUiUpdate.html#PitUiUpdate.Builder"/>
+<area shape="poly" coords="54,194,52,197,49,194,52,192,54,194,54,194" title="Complexity: 3; Coverage: 0%; Class: PitUiUpdatePublisher" alt="" href="org/pitest/pitclipse/ui/view/PitUiUpdatePublisher.html#PitUiUpdatePublisher"/>
+<area shape="poly" coords="54,63,52,65,49,63,52,60,54,63,54,63" title="Complexity: 32; Coverage: 0%; Class: PitArgumentsTab" alt="" href="org/pitest/pitclipse/launch/ui/PitArgumentsTab.html#PitArgumentsTab"/>
+<area shape="poly" coords="54,172,52,174,49,172,52,169,54,172,54,172" title="Complexity: 8; Coverage: 0%; Class: PitViewFinder.ViewSearch" alt="" href="org/pitest/pitclipse/ui/view/PitViewFinder.html#PitViewFinder.ViewSearch"/>
+<area shape="poly" coords="54,176,52,179,49,176,52,174,54,176,54,176" title="Complexity: 7; Coverage: 0%; Class: PitUiActivator" alt="" href="org/pitest/pitclipse/ui/core/PitUiActivator.html#PitUiActivator"/>
+<area shape="poly" coords="54,194,52,197,49,194,52,192,54,194,54,194" title="Complexity: 3; Coverage: 0%; Class: PitUiUpdatePublisher" alt="" href="org/pitest/pitclipse/ui/view/PitUiUpdatePublisher.html#PitUiUpdatePublisher"/>
+<area shape="poly" coords="54,194,52,197,49,194,52,192,54,194,54,194" title="Complexity: 3; Coverage: 0%; Class: PitUiUpdatePublisher" alt="" href="org/pitest/pitclipse/ui/view/PitUiUpdatePublisher.html#PitUiUpdatePublisher"/>
+<area shape="poly" coords="54,176,52,179,49,176,52,174,54,176,54,176" title="Complexity: 7; Coverage: 0%; Class: PitUiActivator" alt="" href="org/pitest/pitclipse/ui/core/PitUiActivator.html#PitUiActivator"/>
+<area shape="poly" coords="54,172,52,174,49,172,52,169,54,172,54,172" title="Complexity: 8; Coverage: 0%; Class: PitViewFinder.ViewSearch" alt="" href="org/pitest/pitclipse/ui/view/PitViewFinder.html#PitViewFinder.ViewSearch"/>
+<area shape="poly" coords="54,203,52,206,49,203,52,201,54,203,54,203" title="Complexity: 1; Coverage: 0%; Class: PitUiUpdate.Builder" alt="" href="org/pitest/pitclipse/ui/extension/point/PitUiUpdate.html#PitUiUpdate.Builder"/>
+<area shape="poly" coords="54,158,52,161,49,158,52,156,54,158,54,158" title="Complexity: 11; Coverage: 0%; Class: DetectionStatusCoverter" alt="" href="org/pitest/pitclipse/runner/results/DetectionStatusCoverter.html#DetectionStatusCoverter"/>
+<area shape="poly" coords="54,140,52,142,49,140,52,137,54,140,54,140" title="Complexity: 15; Coverage: 0%; Class: PitServer" alt="" href="org/pitest/pitclipse/runner/server/PitServer.html#PitServer"/>
+<area shape="poly" coords="54,203,52,206,49,203,52,201,54,203,54,203" title="Complexity: 1; Coverage: 0%; Class: PitUiUpdate.Builder" alt="" href="org/pitest/pitclipse/ui/extension/point/PitUiUpdate.html#PitUiUpdate.Builder"/>
+<area shape="poly" coords="54,172,52,174,49,172,52,169,54,172,54,172" title="Complexity: 8; Coverage: 0%; Class: PitViewFinder.ViewSearch" alt="" href="org/pitest/pitclipse/ui/view/PitViewFinder.html#PitViewFinder.ViewSearch"/>
+<area shape="poly" coords="54,36,52,38,49,36,52,33,54,36,54,36" title="Complexity: 38; Coverage: 0%; Class: LaunchConfigurationWrapper" alt="" href="org/pitest/pitclipse/launch/config/LaunchConfigurationWrapper.html#LaunchConfigurationWrapper"/>
+<area shape="poly" coords="54,185,52,188,49,185,52,183,54,185,54,185" title="Complexity: 5; Coverage: 0%; Class: PitViewFinder" alt="" href="org/pitest/pitclipse/ui/view/PitViewFinder.html#PitViewFinder"/>
+<area shape="poly" coords="54,185,52,188,49,185,52,183,54,185,54,185" title="Complexity: 5; Coverage: 0%; Class: PitViewFinder" alt="" href="org/pitest/pitclipse/ui/view/PitViewFinder.html#PitViewFinder"/>
+<area shape="poly" coords="54,203,52,206,49,203,52,201,54,203,54,203" title="Complexity: 1; Coverage: 0%; Class: PitUiUpdate.Builder" alt="" href="org/pitest/pitclipse/ui/extension/point/PitUiUpdate.html#PitUiUpdate.Builder"/>
+<area shape="poly" coords="54,185,52,188,49,185,52,183,54,185,54,185" title="Complexity: 5; Coverage: 0%; Class: PitViewFinder" alt="" href="org/pitest/pitclipse/ui/view/PitViewFinder.html#PitViewFinder"/>
+<area shape="poly" coords="54,194,52,197,49,194,52,192,54,194,54,194" title="Complexity: 3; Coverage: 0%; Class: PitUiUpdatePublisher" alt="" href="org/pitest/pitclipse/ui/view/PitUiUpdatePublisher.html#PitUiUpdatePublisher"/>
+<area shape="poly" coords="54,203,52,206,49,203,52,201,54,203,54,203" title="Complexity: 1; Coverage: 0%; Class: PitUiUpdate.Builder" alt="" href="org/pitest/pitclipse/ui/extension/point/PitUiUpdate.html#PitUiUpdate.Builder"/>
+<area shape="poly" coords="54,172,52,174,49,172,52,169,54,172,54,172" title="Complexity: 8; Coverage: 0%; Class: PitViewFinder.ViewSearch" alt="" href="org/pitest/pitclipse/ui/view/PitViewFinder.html#PitViewFinder.ViewSearch"/>
+<area shape="poly" coords="54,40,52,43,49,40,52,38,54,40,54,40" title="Complexity: 37; Coverage: 0%; Class: PitCoreActivator" alt="" href="org/pitest/pitclipse/core/PitCoreActivator.html#PitCoreActivator"/>
+<area shape="poly" coords="54,172,52,174,49,172,52,169,54,172,54,172" title="Complexity: 8; Coverage: 0%; Class: PitViewFinder.ViewSearch" alt="" href="org/pitest/pitclipse/ui/view/PitViewFinder.html#PitViewFinder.ViewSearch"/>
+<area shape="poly" coords="54,190,52,192,49,190,52,187,54,190,54,190" title="Complexity: 4; Coverage: 0%; Class: OpenMutationDoubleClick.MutationSource.MutationSelectingJob.OpenFileInEditorAtLine" alt="" href="org/pitest/pitclipse/ui/view/mutations/OpenMutationDoubleClick.html#OpenMutationDoubleClick.MutationSource.MutationSelectingJob.OpenFileInEditorAtLine"/>
+<area shape="poly" coords="54,172,52,174,49,172,52,169,54,172,54,172" title="Complexity: 8; Coverage: 0%; Class: PitViewFinder.ViewSearch" alt="" href="org/pitest/pitclipse/ui/view/PitViewFinder.html#PitViewFinder.ViewSearch"/>
+<area shape="poly" coords="54,203,52,206,49,203,52,201,54,203,54,203" title="Complexity: 1; Coverage: 0%; Class: PitUiUpdate.Builder" alt="" href="org/pitest/pitclipse/ui/extension/point/PitUiUpdate.html#PitUiUpdate.Builder"/>
+<area shape="poly" coords="54,203,52,206,49,203,52,201,54,203,54,203" title="Complexity: 1; Coverage: 0%; Class: PitUiUpdate.Builder" alt="" href="org/pitest/pitclipse/ui/extension/point/PitUiUpdate.html#PitUiUpdate.Builder"/>
+<area shape="poly" coords="54,199,52,201,49,199,52,196,54,199,54,199" title="Complexity: 2; Coverage: 0%; Class: LinkSelectionAdapter" alt="" href="org/pitest/pitclipse/ui/utils/LinkSelectionAdapter.html#LinkSelectionAdapter"/>
+<area shape="poly" coords="54,199,52,201,49,199,52,196,54,199,54,199" title="Complexity: 2; Coverage: 0%; Class: LinkSelectionAdapter" alt="" href="org/pitest/pitclipse/ui/utils/LinkSelectionAdapter.html#LinkSelectionAdapter"/>
+<area shape="poly" coords="54,203,52,206,49,203,52,201,54,203,54,203" title="Complexity: 1; Coverage: 0%; Class: PitUiUpdate.Builder" alt="" href="org/pitest/pitclipse/ui/extension/point/PitUiUpdate.html#PitUiUpdate.Builder"/>
+<area shape="poly" coords="54,203,52,206,49,203,52,201,54,203,54,203" title="Complexity: 1; Coverage: 0%; Class: PitUiUpdate.Builder" alt="" href="org/pitest/pitclipse/ui/extension/point/PitUiUpdate.html#PitUiUpdate.Builder"/>
+<area shape="poly" coords="54,203,52,206,49,203,52,201,54,203,54,203" title="Complexity: 1; Coverage: 0%; Class: PitUiUpdate.Builder" alt="" href="org/pitest/pitclipse/ui/extension/point/PitUiUpdate.html#PitUiUpdate.Builder"/>
+<area shape="poly" coords="54,203,52,206,49,203,52,201,54,203,54,203" title="Complexity: 1; Coverage: 0%; Class: PitUiUpdate.Builder" alt="" href="org/pitest/pitclipse/ui/extension/point/PitUiUpdate.html#PitUiUpdate.Builder"/>
+<area shape="poly" coords="54,199,52,201,49,199,52,196,54,199,54,199" title="Complexity: 2; Coverage: 0%; Class: LinkSelectionAdapter" alt="" href="org/pitest/pitclipse/ui/utils/LinkSelectionAdapter.html#LinkSelectionAdapter"/>
+<area shape="poly" coords="54,203,52,206,49,203,52,201,54,203,54,203" title="Complexity: 1; Coverage: 0%; Class: PitUiUpdate.Builder" alt="" href="org/pitest/pitclipse/ui/extension/point/PitUiUpdate.html#PitUiUpdate.Builder"/>
+<area shape="poly" coords="54,176,52,179,49,176,52,174,54,176,54,176" title="Complexity: 7; Coverage: 0%; Class: PitUiActivator" alt="" href="org/pitest/pitclipse/ui/core/PitUiActivator.html#PitUiActivator"/>
+</map>
+            </div>
+        </div>
+        
+                    <div class="dashboard-widget">
+                <header class="dashboard-widget-header">
+                    <h3>Coverage tree map</h3>
+                </header>
+                <div class="dashboard-widget-content">
+                    <div id="infovis" style="width:100%; height:250px;">
+                        <div id="treemap-loader" style="position:relative;top:50px;">
+                            <p>
+                                Generating Coverage Tree Map. Please wait...
+                            </p>
+                            <p>
+                                <img src="img/ajax-loader.gif" alt="Loading Treemap"/>
+                            </p>
+                        </div>
+                    </div>
+                    <p><a href="treemap.html">See more</a></p>
+                </div>
+
+            </div>
+            </div>
+
+
+    <div class="aui-item">
+        <div class="dashboard-widget">
+            <header class="dashboard-widget-header">
+                <h3>Top 20 project risks</h3>
+            </header>
+            <div class="dashboard-widget-content">
+                
+                                                                <a class="tag" href="org/pitest/pitclipse/runner/results/DetectionStatusCoverter.html"
+                            style="font-size: 28px;color:#d04437"
+                            title="Average Method Complexity - 5,5 , Coverage - 0% ">DetectionStatusCoverter</a>
+                                    
+                                                                <a class="tag" href="org/pitest/pitclipse/launch/config/WorkspaceLevelSourceDirFinder.html"
+                            style="font-size: 22px;color:#d04437"
+                            title="Average Method Complexity - 3,5 , Coverage - 0% ">WorkspaceLevelSourceDirFinder</a>
+                                    
+                                                                <a class="tag" href="org/pitest/pitclipse/launch/ui/PitMigrationDelegate.html"
+                            style="font-size: 21px;color:#d04437"
+                            title="Average Method Complexity - 3,4 , Coverage - 0% ">PitMigrationDelegate</a>
+                                    
+                                                                <a class="tag" href="org/pitest/pitclipse/runner/PitRunnerMain.html"
+                            style="font-size: 20px;color:#d04437"
+                            title="Average Method Complexity - 3 , Coverage - 0% ">PitRunnerMain</a>
+                                    
+                                                                <a class="tag" href="org/pitest/pitclipse/launch/config/WorkspaceLevelClassFinder.html"
+                            style="font-size: 20px;color:#d04437"
+                            title="Average Method Complexity - 3 , Coverage - 0% ">WorkspaceLevelClassFinder</a>
+                                    
+                                                                <a class="tag" href="org/pitest/pitclipse/launch/config/WorkspaceLevelProjectFinder.html"
+                            style="font-size: 20px;color:#d04437"
+                            title="Average Method Complexity - 3 , Coverage - 0% ">WorkspaceLevelProjectFinder</a>
+                                    
+                                                                <a class="tag" href="org/pitest/pitclipse/runner/model/MutationSorter.html"
+                            style="font-size: 20px;color:#d04437"
+                            title="Average Method Complexity - 3 , Coverage - 0% ">MutationSorter</a>
+                                    
+                                                                <a class="tag" href="org/pitest/pitclipse/runner/util/PitFileUtils.html"
+                            style="font-size: 19px;color:#d04437"
+                            title="Average Method Complexity - 2,667 , Coverage - 0% ">PitFileUtils</a>
+                                    
+                                                                <a class="tag" href="org/pitest/pitclipse/runner/io/SocketProvider.html"
+                            style="font-size: 19px;color:#d04437"
+                            title="Average Method Complexity - 2,571 , Coverage - 0% ">SocketProvider</a>
+                                    
+                                                                <a class="tag" href="org/pitest/pitclipse/launch/config/PackageFinder.html"
+                            style="font-size: 19px;color:#d04437"
+                            title="Average Method Complexity - 2,5 , Coverage - 0% ">PackageFinder.ProjectLevelProxyVisitor</a>
+                                    
+                                                                <a class="tag" href="org/pitest/pitclipse/core/result/JdtStructureService.html"
+                            style="font-size: 18px;color:#d04437"
+                            title="Average Method Complexity - 2,333 , Coverage - 0% ">JdtStructureService</a>
+                                    
+                                                                <a class="tag" href="org/pitest/pitclipse/runner/results/summary/Coverage.html"
+                            style="font-size: 18px;color:#d04437"
+                            title="Average Method Complexity - 2,2 , Coverage - 0% ">Coverage</a>
+                                    
+                                                                <a class="tag" href="org/pitest/pitclipse/ui/utils/PitclipseUiUtils.html"
+                            style="font-size: 18px;color:#d04437"
+                            title="Average Method Complexity - 2,182 , Coverage - 0% ">PitclipseUiUtils</a>
+                                    
+                                                                <a class="tag" href="org/pitest/pitclipse/runner/server/PitServer.html"
+                            style="font-size: 18px;color:#d04437"
+                            title="Average Method Complexity - 2,143 , Coverage - 0% ">PitServer</a>
+                                    
+                                                                <a class="tag" href="org/pitest/pitclipse/launch/ui/PitLaunchUiActivator.html"
+                            style="font-size: 17px;color:#d04437"
+                            title="Average Method Complexity - 2 , Coverage - 0% ">PitLaunchUiActivator</a>
+                                    
+                                                                <a class="tag" href="org/pitest/pitclipse/launch/ui/PitMutatorsTab.html"
+                            style="font-size: 17px;color:#d04437"
+                            title="Average Method Complexity - 2 , Coverage - 0% ">PitMutatorsTab.UpdateDialogOnCurrentMutatorGroupChanged</a>
+                                    
+                                                                <a class="tag" href="org/pitest/pitclipse/runner/model/ClassMutations.html"
+                            style="font-size: 17px;color:#d04437"
+                            title="Average Method Complexity - 2 , Coverage - 0% ">ClassMutations.Builder.MutationComparator</a>
+                                    
+                                                                <a class="tag" href="org/pitest/pitclipse/runner/results/Mutations.html"
+                            style="font-size: 17px;color:#d04437"
+                            title="Average Method Complexity - 2 , Coverage - 0% ">Mutations</a>
+                                    
+                                                                <a class="tag" href="org/pitest/pitclipse/launch/ui/PitLaunchShortcut.html"
+                            style="font-size: 17px;color:#d04437"
+                            title="Average Method Complexity - 1,909 , Coverage - 0% ">PitLaunchShortcut</a>
+                                    
+                                                                <a class="tag" href="org/pitest/pitclipse/launch/config/LaunchConfigurationWrapper.html"
+                            style="font-size: 17px;color:#d04437"
+                            title="Average Method Complexity - 1,727 , Coverage - 0% ">LaunchConfigurationWrapper</a>
+                                                    <p><a href="top-risks.html">See more</a></p>
+            </div>
+        </div>
+
+        <div class="dashboard-widget">
+            <header class="dashboard-widget-header">
+                <h3>Most complex packages</h3>
+            </header>
+            <div class="dashboard-widget-content">
+                
+                <table class="aui">
+                                            
+                                                <tr>
+                            <td>1. </td>
+                            <td><div style="display: table; width: 100%">
+<div class="barGraphValue"><span class="sortValue">0.0</span>0%</div><div style="display: table-cell">
+ <div title="0% Covered"  style="min-width:40px;" class="barNegative contribBarNegative "><div class="barPositive contribBarPositive " style="width:0%"></div></div></div></div></td>
+                            <td>
+                                <a href="org/pitest/pitclipse/launch/ui/pkg-summary.html">org.pitest.pitclipse.launch.ui</a>
+                                <span class="aui-badge" title="Package complexity">147</span>
+                            </td>
+                        </tr>
+                                            
+                                                <tr>
+                            <td>2. </td>
+                            <td><div style="display: table; width: 100%">
+<div class="barGraphValue"><span class="sortValue">0.0</span>0%</div><div style="display: table-cell">
+ <div title="0% Covered"  style="min-width:40px;" class="barNegative contribBarNegative "><div class="barPositive contribBarPositive " style="width:0%"></div></div></div></div></td>
+                            <td>
+                                <a href="org/pitest/pitclipse/runner/model/pkg-summary.html">org.pitest.pitclipse.runner.model</a>
+                                <span class="aui-badge" title="Package complexity">137</span>
+                            </td>
+                        </tr>
+                                            
+                                                <tr>
+                            <td>3. </td>
+                            <td><div style="display: table; width: 100%">
+<div class="barGraphValue"><span class="sortValue">0.0</span>0%</div><div style="display: table-cell">
+ <div title="0% Covered"  style="min-width:40px;" class="barNegative contribBarNegative "><div class="barPositive contribBarPositive " style="width:0%"></div></div></div></div></td>
+                            <td>
+                                <a href="org/pitest/pitclipse/runner/pkg-summary.html">org.pitest.pitclipse.runner</a>
+                                <span class="aui-badge" title="Package complexity">113</span>
+                            </td>
+                        </tr>
+                                            
+                                                <tr>
+                            <td>4. </td>
+                            <td><div style="display: table; width: 100%">
+<div class="barGraphValue"><span class="sortValue">0.0</span>0%</div><div style="display: table-cell">
+ <div title="0% Covered"  style="min-width:40px;" class="barNegative contribBarNegative "><div class="barPositive contribBarPositive " style="width:0%"></div></div></div></div></td>
+                            <td>
+                                <a href="org/pitest/pitclipse/launch/config/pkg-summary.html">org.pitest.pitclipse.launch.config</a>
+                                <span class="aui-badge" title="Package complexity">102</span>
+                            </td>
+                        </tr>
+                                            
+                                                <tr>
+                            <td>5. </td>
+                            <td><div style="display: table; width: 100%">
+<div class="barGraphValue"><span class="sortValue">0.0</span>0%</div><div style="display: table-cell">
+ <div title="0% Covered"  style="min-width:40px;" class="barNegative contribBarNegative "><div class="barPositive contribBarPositive " style="width:0%"></div></div></div></div></td>
+                            <td>
+                                <a href="org/pitest/pitclipse/ui/view/mutations/pkg-summary.html">org.pitest.pitclipse.ui.view.mutations</a>
+                                <span class="aui-badge" title="Package complexity">64</span>
+                            </td>
+                        </tr>
+                                    </table>
+            </div>
+        </div>
+
+        <div class="dashboard-widget">
+            <header class="dashboard-widget-header">
+                <h3>Most complex classes</h3>
+            </header>
+            <div class="dashboard-widget-content">
+                <table class="aui">
+                                            
+                                                <tr>
+                            <td>1. </td>
+                            <td><div style="display: table; width: 100%">
+<div class="barGraphValue"><span class="sortValue">0.0</span>0%</div><div style="display: table-cell">
+ <div title="0% Covered"  style="min-width:40px;" class="barNegative contribBarNegative "><div class="barPositive contribBarPositive " style="width:0%"></div></div></div></div></td>
+                            <td>
+                                <a  href="org/pitest/pitclipse/launch/ui/PitLaunchShortcut.html"  title="org.pitest.pitclipse.launch.ui.PitLaunchShortcut">PitLaunchShortcut</a>
+                                <span class="aui-badge" title="Class complexity">42</span>
+                            </td>
+                        </tr>
+                                            
+                                                <tr>
+                            <td>2. </td>
+                            <td><div style="display: table; width: 100%">
+<div class="barGraphValue"><span class="sortValue">0.0</span>0%</div><div style="display: table-cell">
+ <div title="0% Covered"  style="min-width:40px;" class="barNegative contribBarNegative "><div class="barPositive contribBarPositive " style="width:0%"></div></div></div></div></td>
+                            <td>
+                                <a  href="org/pitest/pitclipse/launch/config/LaunchConfigurationWrapper.html"  title="org.pitest.pitclipse.launch.config.LaunchConfigurationWrapper">LaunchConfigurationWrapper</a>
+                                <span class="aui-badge" title="Class complexity">38</span>
+                            </td>
+                        </tr>
+                                            
+                                                <tr>
+                            <td>3. </td>
+                            <td><div style="display: table; width: 100%">
+<div class="barGraphValue"><span class="sortValue">0.0</span>0%</div><div style="display: table-cell">
+ <div title="0% Covered"  style="min-width:40px;" class="barNegative contribBarNegative "><div class="barPositive contribBarPositive " style="width:0%"></div></div></div></div></td>
+                            <td>
+                                <a  href="org/pitest/pitclipse/core/PitCoreActivator.html"  title="org.pitest.pitclipse.core.PitCoreActivator">PitCoreActivator</a>
+                                <span class="aui-badge" title="Class complexity">37</span>
+                            </td>
+                        </tr>
+                                            
+                                                <tr>
+                            <td>4. </td>
+                            <td><div style="display: table; width: 100%">
+<div class="barGraphValue"><span class="sortValue">0.0</span>0%</div><div style="display: table-cell">
+ <div title="0% Covered"  style="min-width:40px;" class="barNegative contribBarNegative "><div class="barPositive contribBarPositive " style="width:0%"></div></div></div></div></td>
+                            <td>
+                                <a  href="org/pitest/pitclipse/runner/PitOptions.html"  title="org.pitest.pitclipse.runner.PitOptions.PitOptionsBuilder">PitOptions.PitOptionsBuilder</a>
+                                <span class="aui-badge" title="Class complexity">35</span>
+                            </td>
+                        </tr>
+                                            
+                                                <tr>
+                            <td>5. </td>
+                            <td><div style="display: table; width: 100%">
+<div class="barGraphValue"><span class="sortValue">0.0</span>0%</div><div style="display: table-cell">
+ <div title="0% Covered"  style="min-width:40px;" class="barNegative contribBarNegative "><div class="barPositive contribBarPositive " style="width:0%"></div></div></div></div></td>
+                            <td>
+                                <a  href="org/pitest/pitclipse/launch/ui/PitArgumentsTab.html"  title="org.pitest.pitclipse.launch.ui.PitArgumentsTab">PitArgumentsTab</a>
+                                <span class="aui-badge" title="Class complexity">32</span>
+                            </td>
+                        </tr>
+                                    </table>
+            </div>
+        </div>
+
+                <div class="dashboard-widget">
+            <header class="dashboard-widget-header">
+                <h3>Least tested methods</h3>
+            </header>
+            <div class="dashboard-widget-content">
+                <table class="aui">
+                                            
+
+                    <tr>
+                        <td align="right">1.</td>
+                        <td align="right"><div style="display: table; width: 100%">
+<div class="barGraphValue"><span class="sortValue">0.0</span>0%</div><div style="display: table-cell">
+ <div title="0% Covered"  style="min-width:40px;" class="barNegative contribBarNegative "><div class="barPositive contribBarPositive " style="width:0%"></div></div></div></div></td>
+                        <td>
+                              <!-- normal method -->
+                                                      <a title="PitLaunchShortcut.createLaunchConfiguration(IJavaElement)&#160;:&#160;ILaunchConfigurationWorkingCopy" href="org/pitest/pitclipse/launch/ui/PitLaunchShortcut.html?line=182#src-182">PitLaunchShortcut.createLaunchConfiguration(IJavaElement)&#160;:&#160;ILaunchConfigurationWorkingCopy</a>
+                            <span class="aui-badge" title="Method complexity">3</span>
+
+                        </td>
+                    </tr>
+                                            
+
+                    <tr>
+                        <td align="right">2.</td>
+                        <td align="right"><div style="display: table; width: 100%">
+<div class="barGraphValue"><span class="sortValue">0.0</span>0%</div><div style="display: table-cell">
+ <div title="0% Covered"  style="min-width:40px;" class="barNegative contribBarNegative "><div class="barPositive contribBarPositive " style="width:0%"></div></div></div></div></td>
+                        <td>
+                              <!-- normal method -->
+                                                      <a title="LaunchConfigurationWrapper.getPitOptionsBuilder()&#160;:&#160;PitOptions.PitOptionsBuilder" href="org/pitest/pitclipse/launch/config/LaunchConfigurationWrapper.html?line=121#src-121">LaunchConfigurationWrapper.getPitOptionsBuilder()&#160;:&#160;PitOptions.PitOptionsBuilder</a>
+                            <span class="aui-badge" title="Method complexity">4</span>
+
+                        </td>
+                    </tr>
+                                            
+
+                    <tr>
+                        <td align="right">3.</td>
+                        <td align="right"><div style="display: table; width: 100%">
+<div class="barGraphValue"><span class="sortValue">0.0</span>0%</div><div style="display: table-cell">
+ <div title="0% Covered"  style="min-width:40px;" class="barNegative contribBarNegative "><div class="barPositive contribBarPositive " style="width:0%"></div></div></div></div></td>
+                        <td>
+                              <!-- normal method -->
+                                                      <a title="PitCoreActivator.getConfiguration()&#160;:&#160;PitConfiguration" href="org/pitest/pitclipse/core/PitCoreActivator.html?line=270#src-270">PitCoreActivator.getConfiguration()&#160;:&#160;PitConfiguration</a>
+                            <span class="aui-badge" title="Method complexity">4</span>
+
+                        </td>
+                    </tr>
+                                            
+
+                    <tr>
+                        <td align="right">4.</td>
+                        <td align="right"><div style="display: table; width: 100%">
+<div class="barGraphValue"><span class="sortValue">0.0</span>0%</div><div style="display: table-cell">
+ <div title="0% Covered"  style="min-width:40px;" class="barNegative contribBarNegative "><div class="barPositive contribBarPositive " style="width:0%"></div></div></div></div></td>
+                        <td>
+                              <!-- normal method -->
+                                                      <a title="PitCliArguments.toCliArgs(PitOptions)&#160;:&#160;String[]" href="org/pitest/pitclipse/runner/PitCliArguments.html?line=41#src-41">PitCliArguments.toCliArgs(PitOptions)&#160;:&#160;String[]</a>
+                            <span class="aui-badge" title="Method complexity">3</span>
+
+                        </td>
+                    </tr>
+                                            
+
+                    <tr>
+                        <td align="right">5.</td>
+                        <td align="right"><div style="display: table; width: 100%">
+<div class="barGraphValue"><span class="sortValue">0.0</span>0%</div><div style="display: table-cell">
+ <div title="0% Covered"  style="min-width:40px;" class="barNegative contribBarNegative "><div class="barPositive contribBarPositive " style="width:0%"></div></div></div></div></td>
+                        <td>
+                              <!-- normal method -->
+                                                      <a title="PitServer.sendEvent()&#160;:&#160;void" href="org/pitest/pitclipse/runner/server/PitServer.html?line=105#src-105">PitServer.sendEvent()&#160;:&#160;void</a>
+                            <span class="aui-badge" title="Method complexity">8</span>
+
+                        </td>
+                    </tr>
+                                            
+
+                    <tr>
+                        <td align="right">6.</td>
+                        <td align="right"><div style="display: table; width: 100%">
+<div class="barGraphValue"><span class="sortValue">0.0</span>0%</div><div style="display: table-cell">
+ <div title="0% Covered"  style="min-width:40px;" class="barNegative contribBarNegative "><div class="barPositive contribBarPositive " style="width:0%"></div></div></div></div></td>
+                        <td>
+                              <!-- normal method -->
+                                                      <a title="PitMigrationDelegate.getResource(ILaunchConfiguration)&#160;:&#160;IResource" href="org/pitest/pitclipse/launch/ui/PitMigrationDelegate.html?line=62#src-62">PitMigrationDelegate.getResource(ILaunchConfiguration)&#160;:&#160;IResource</a>
+                            <span class="aui-badge" title="Method complexity">7</span>
+
+                        </td>
+                    </tr>
+                                            
+
+                    <tr>
+                        <td align="right">7.</td>
+                        <td align="right"><div style="display: table; width: 100%">
+<div class="barGraphValue"><span class="sortValue">0.0</span>0%</div><div style="display: table-cell">
+ <div title="0% Covered"  style="min-width:40px;" class="barNegative contribBarNegative "><div class="barPositive contribBarPositive " style="width:0%"></div></div></div></div></td>
+                        <td>
+                              <!-- normal method -->
+                                                      <a title="PackageFinder.ProjectLevelProxyVisitor.visit(IResourceProxy)&#160;:&#160;boolean" href="org/pitest/pitclipse/launch/config/PackageFinder.html?line=54#src-54">PackageFinder.ProjectLevelProxyVisitor.visit(IResourceProxy)&#160;:&#160;boolean</a>
+                            <span class="aui-badge" title="Method complexity">6</span>
+
+                        </td>
+                    </tr>
+                                            
+
+                    <tr>
+                        <td align="right">8.</td>
+                        <td align="right"><div style="display: table; width: 100%">
+<div class="barGraphValue"><span class="sortValue">0.0</span>0%</div><div style="display: table-cell">
+ <div title="0% Covered"  style="min-width:40px;" class="barNegative contribBarNegative "><div class="barPositive contribBarPositive " style="width:0%"></div></div></div></div></td>
+                        <td>
+                              <!-- normal method -->
+                                                      <a title="PitMutatorsTab.createMutatorGroupsWidgets(Font,Composite)&#160;:&#160;void" href="org/pitest/pitclipse/launch/ui/PitMutatorsTab.html?line=165#src-165">PitMutatorsTab.createMutatorGroupsWidgets(Font,Composite)&#160;:&#160;void</a>
+                            <span class="aui-badge" title="Method complexity">1</span>
+
+                        </td>
+                    </tr>
+                                            
+
+                    <tr>
+                        <td align="right">9.</td>
+                        <td align="right"><div style="display: table; width: 100%">
+<div class="barGraphValue"><span class="sortValue">0.0</span>0%</div><div style="display: table-cell">
+ <div title="0% Covered"  style="min-width:40px;" class="barNegative contribBarNegative "><div class="barPositive contribBarPositive " style="width:0%"></div></div></div></div></td>
+                        <td>
+                              <!-- normal method -->
+                                                      <a title="PitArgumentsTab.initializeFrom(ILaunchConfiguration)&#160;:&#160;void" href="org/pitest/pitclipse/launch/ui/PitArgumentsTab.html?line=155#src-155">PitArgumentsTab.initializeFrom(ILaunchConfiguration)&#160;:&#160;void</a>
+                            <span class="aui-badge" title="Method complexity">3</span>
+
+                        </td>
+                    </tr>
+                                            
+
+                    <tr>
+                        <td align="right">10.</td>
+                        <td align="right"><div style="display: table; width: 100%">
+<div class="barGraphValue"><span class="sortValue">0.0</span>0%</div><div style="display: table-cell">
+ <div title="0% Covered"  style="min-width:40px;" class="barNegative contribBarNegative "><div class="barPositive contribBarPositive " style="width:0%"></div></div></div></div></td>
+                        <td>
+                              <!-- normal method -->
+                                                      <a title="PitCoreActivator.start(BundleContext)&#160;:&#160;void" href="org/pitest/pitclipse/core/PitCoreActivator.html?line=118#src-118">PitCoreActivator.start(BundleContext)&#160;:&#160;void</a>
+                            <span class="aui-badge" title="Method complexity">3</span>
+
+                        </td>
+                    </tr>
+                                            
+
+                    <tr>
+                        <td align="right">11.</td>
+                        <td align="right"><div style="display: table; width: 100%">
+<div class="barGraphValue"><span class="sortValue">0.0</span>0%</div><div style="display: table-cell">
+ <div title="0% Covered"  style="min-width:40px;" class="barNegative contribBarNegative "><div class="barPositive contribBarPositive " style="width:0%"></div></div></div></div></td>
+                        <td>
+                              <!-- normal method -->
+                                                      <a title="DetectionStatusCoverter.convert(org.pitest.mutationtest.DetectionStatus)&#160;:&#160;DetectionStatus" href="org/pitest/pitclipse/runner/results/DetectionStatusCoverter.html?line=28#src-28">DetectionStatusCoverter.convert(org.pitest.mutationtest.DetectionStatus)&#160;:&#160;DetectionStatus</a>
+                            <span class="aui-badge" title="Method complexity">10</span>
+
+                        </td>
+                    </tr>
+                                            
+
+                    <tr>
+                        <td align="right">12.</td>
+                        <td align="right"><div style="display: table; width: 100%">
+<div class="barGraphValue"><span class="sortValue">0.0</span>0%</div><div style="display: table-cell">
+ <div title="0% Covered"  style="min-width:40px;" class="barNegative contribBarNegative "><div class="barPositive contribBarPositive " style="width:0%"></div></div></div></div></td>
+                        <td>
+                              <!-- normal method -->
+                                                      <a title="PitFileUtils.findFile(File,String)&#160;:&#160;File" href="org/pitest/pitclipse/runner/util/PitFileUtils.html?line=48#src-48">PitFileUtils.findFile(File,String)&#160;:&#160;File</a>
+                            <span class="aui-badge" title="Method complexity">5</span>
+
+                        </td>
+                    </tr>
+                                            
+
+                    <tr>
+                        <td align="right">13.</td>
+                        <td align="right"><div style="display: table; width: 100%">
+<div class="barGraphValue"><span class="sortValue">0.0</span>0%</div><div style="display: table-cell">
+ <div title="0% Covered"  style="min-width:40px;" class="barNegative contribBarNegative "><div class="barPositive contribBarPositive " style="width:0%"></div></div></div></div></td>
+                        <td>
+                              <!-- normal method -->
+                                                      <a title="WorkspaceLevelSourceDirFinder.getSourceDirsFromProject(IJavaProject)&#160;:&#160;Set&lt;File&gt;" href="org/pitest/pitclipse/launch/config/WorkspaceLevelSourceDirFinder.html?line=49#src-49">WorkspaceLevelSourceDirFinder.getSourceDirsFromProject(IJavaProject)&#160;:&#160;Set&lt;File&gt;</a>
+                            <span class="aui-badge" title="Method complexity">4</span>
+
+                        </td>
+                    </tr>
+                                            
+
+                    <tr>
+                        <td align="right">14.</td>
+                        <td align="right"><div style="display: table; width: 100%">
+<div class="barGraphValue"><span class="sortValue">0.0</span>0%</div><div style="display: table-cell">
+ <div title="0% Covered"  style="min-width:40px;" class="barNegative contribBarNegative "><div class="barPositive contribBarPositive " style="width:0%"></div></div></div></div></td>
+                        <td>
+                              <!-- normal method -->
+                                                      <a title="PitArgumentsTab.performApply(ILaunchConfigurationWorkingCopy)&#160;:&#160;void" href="org/pitest/pitclipse/launch/ui/PitArgumentsTab.html?line=397#src-397">PitArgumentsTab.performApply(ILaunchConfigurationWorkingCopy)&#160;:&#160;void</a>
+                            <span class="aui-badge" title="Method complexity">3</span>
+
+                        </td>
+                    </tr>
+                                            
+
+                    <tr>
+                        <td align="right">15.</td>
+                        <td align="right"><div style="display: table; width: 100%">
+<div class="barGraphValue"><span class="sortValue">0.0</span>0%</div><div style="display: table-cell">
+ <div title="0% Covered"  style="min-width:40px;" class="barNegative contribBarNegative "><div class="barPositive contribBarPositive " style="width:0%"></div></div></div></div></td>
+                        <td>
+                              <!-- normal method -->
+                                                      <a title="PitArgumentsTab.createTestClassWidgets(Font,Composite,int)&#160;:&#160;void" href="org/pitest/pitclipse/launch/ui/PitArgumentsTab.html?line=255#src-255">PitArgumentsTab.createTestClassWidgets(Font,Composite,int)&#160;:&#160;void</a>
+                            <span class="aui-badge" title="Method complexity">1</span>
+
+                        </td>
+                    </tr>
+                                            
+
+                    <tr>
+                        <td align="right">16.</td>
+                        <td align="right"><div style="display: table; width: 100%">
+<div class="barGraphValue"><span class="sortValue">0.0</span>0%</div><div style="display: table-cell">
+ <div title="0% Covered"  style="min-width:40px;" class="barNegative contribBarNegative "><div class="barPositive contribBarPositive " style="width:0%"></div></div></div></div></td>
+                        <td>
+                              <!-- normal method -->
+                                                      <a title="ProjectLevelSourceDirFinder.getSourceDirs(LaunchConfigurationWrapper)&#160;:&#160;List&lt;File&gt;" href="org/pitest/pitclipse/launch/config/ProjectLevelSourceDirFinder.html?line=34#src-34">ProjectLevelSourceDirFinder.getSourceDirs(LaunchConfigurationWrapper)&#160;:&#160;List&lt;File&gt;</a>
+                            <span class="aui-badge" title="Method complexity">3</span>
+
+                        </td>
+                    </tr>
+                                            
+
+                    <tr>
+                        <td align="right">17.</td>
+                        <td align="right"><div style="display: table; width: 100%">
+<div class="barGraphValue"><span class="sortValue">0.0</span>0%</div><div style="display: table-cell">
+ <div title="0% Covered"  style="min-width:40px;" class="barNegative contribBarNegative "><div class="barPositive contribBarPositive " style="width:0%"></div></div></div></div></td>
+                        <td>
+                              <!-- normal method -->
+                                                      <a title="PitArgumentsTab.createControl(Composite)&#160;:&#160;void" href="org/pitest/pitclipse/launch/ui/PitArgumentsTab.html?line=200#src-200">PitArgumentsTab.createControl(Composite)&#160;:&#160;void</a>
+                            <span class="aui-badge" title="Method complexity">1</span>
+
+                        </td>
+                    </tr>
+                                            
+
+                    <tr>
+                        <td align="right">18.</td>
+                        <td align="right"><div style="display: table; width: 100%">
+<div class="barGraphValue"><span class="sortValue">0.0</span>0%</div><div style="display: table-cell">
+ <div title="0% Covered"  style="min-width:40px;" class="barNegative contribBarNegative "><div class="barPositive contribBarPositive " style="width:0%"></div></div></div></div></td>
+                        <td>
+                              <!-- normal method -->
+                                                      <a title="PitArgumentsTab.createTestDirWidgets(Font,Composite,int)&#160;:&#160;void" href="org/pitest/pitclipse/launch/ui/PitArgumentsTab.html?line=284#src-284">PitArgumentsTab.createTestDirWidgets(Font,Composite,int)&#160;:&#160;void</a>
+                            <span class="aui-badge" title="Method complexity">1</span>
+
+                        </td>
+                    </tr>
+                                            
+
+                    <tr>
+                        <td align="right">19.</td>
+                        <td align="right"><div style="display: table; width: 100%">
+<div class="barGraphValue"><span class="sortValue">0.0</span>0%</div><div style="display: table-cell">
+ <div title="0% Covered"  style="min-width:40px;" class="barNegative contribBarNegative "><div class="barPositive contribBarPositive " style="width:0%"></div></div></div></div></td>
+                        <td>
+                              <!-- normal method -->
+                                                      <a title="PitMutatorsTab.createMutatorsTable(Composite)&#160;:&#160;void" href="org/pitest/pitclipse/launch/ui/PitMutatorsTab.html?line=217#src-217">PitMutatorsTab.createMutatorsTable(Composite)&#160;:&#160;void</a>
+                            <span class="aui-badge" title="Method complexity">1</span>
+
+                        </td>
+                    </tr>
+                                            
+
+                    <tr>
+                        <td align="right">20.</td>
+                        <td align="right"><div style="display: table; width: 100%">
+<div class="barGraphValue"><span class="sortValue">0.0</span>0%</div><div style="display: table-cell">
+ <div title="0% Covered"  style="min-width:40px;" class="barNegative contribBarNegative "><div class="barPositive contribBarPositive " style="width:0%"></div></div></div></div></td>
+                        <td>
+                              <!-- normal method -->
+                                                      <a title="PitclipseMutationsResultListener.handleMutationResult(ClassMutationResults)&#160;:&#160;void" href="org/pitest/pitclipse/runner/results/mutations/PitclipseMutationsResultListener.html?line=56#src-56">PitclipseMutationsResultListener.handleMutationResult(ClassMutationResults)&#160;:&#160;void</a>
+                            <span class="aui-badge" title="Method complexity">1</span>
+
+                        </td>
+                    </tr>
+                                    </table>
+            </div>
+        </div>
+        
+    </div>
+</div>
+                            </div> <!-- tabs-pane active-pane -->
+                        </div>
+
+    <script type="text/javascript" src="jit.js" ></script>
+    <script type="text/javascript" src="treemap-dash-json.js" ></script>
+
+                        </div> <!-- class="aui-page-panel-content-clover" -->
+                    <footer id="footer" role="contentinfo">
+    <section class="footer-body">
+        <ul>
+            <li>
+                Report generated by <a target="_new" href="http://www.atlassian.com/software/clover">Atlassian Clover</a> v 4.1.2
+                on seg. mai. 13 2024 21:45:50 BRT using coverage data from seg. mai. 13 2024 21:45:50 BRT.
+            </li>
+        </ul>
+        <ul>
+            <li>Clover Evaluation License registered to Clover Plugin. You have 29 day(s) before your license expires.</li>
+        </ul>
+        <div id="footer-logo">
+            <a target="_blank" href="http://www.atlassian.com/">
+                Atlassian
+            </a>
+        </div>
+    </section>
+</footer>                </section> <!-- class="aui-page-panel-content" -->
+            </div> <!-- class="aui-page-panel-inner" -->
+        </div> <!-- class="aui-page-panel" -->
+    </div> <!-- id="page" -->
+</body>
+</html>
